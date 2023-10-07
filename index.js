@@ -1,5 +1,5 @@
 import express from 'express';
-import { PORT } from './config.js';
+import { PORT, MONGODB_URL } from './config.js';
 import mongoose from 'mongoose';
 import BooksRoute from './routes/BooksRoute.js'
 import cors from 'cors';
@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 
 const app = express();
 dotenv.config();
-const mongoDBUrl = process.env.MONGODB_URL;
+const mongoDBUrl = MONGODB_URL;
 
 app.use(express.json());
 app.use(cors(
@@ -25,7 +25,6 @@ app.get('/', (request, response) => {
 })
 
 app.use('/books', BooksRoute)
-
 
 mongoose
     .connect(mongoDBUrl)
