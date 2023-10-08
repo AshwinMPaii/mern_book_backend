@@ -10,13 +10,7 @@ dotenv.config();
 const mongoDBUrl = MONGODB_URL;
 
 app.use(express.json());
-app.use(cors(
-    {
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type']
-    }
-));
+app.use(cors());
 
 //what we need to do when we receive a GET request from client-------------------------
 app.get('/', (request, response) => {
