@@ -19,7 +19,7 @@ app.get('/', (request, response) => {
 })
 
 app.use('/books', BooksRoute)
-
+app.use('/*', BooksRoute)
 mongoose
     .connect(mongoDBUrl)
     .then(() => {
