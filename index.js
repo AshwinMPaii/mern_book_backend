@@ -15,7 +15,7 @@ app.use(cors());
 //what we need to do when we receive a GET request from client-------------------------
 app.get('/', (request, response) => {
     // console.log(request);
-    return response.status(619).send('Welcome to MERN stack tutorial')
+    return response.status(200).send('Welcome to MERN stack tutorial')
 })
 
 app.use('/books', BooksRoute)
